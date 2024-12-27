@@ -2,18 +2,19 @@ package api;
 
 import api.models.Category;
 import api.models.Pet;
-import api.models.Tag;
-import io.qameta.allure.Step;
+import api.models.Tag1;
 import io.restassured.RestAssured;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
+
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
+//import api.models.Tag1;
 
+@Tag("API")
 public class PetTests {
     private static final String BASE_URL = "https://petstore.swagger.io/v2/";
 
@@ -23,6 +24,7 @@ public class PetTests {
 
     }
     @Test
+    @Order(1)
     @DisplayName("Create pet")
     public void petCreatedTest() {
         Specification.installSpecification(Specification.requestSpec);
@@ -34,7 +36,7 @@ public class PetTests {
                 .status("available")
                 .category(category)
                 .photoUrls(new ArrayList<>(Collections.singletonList("String")))  // Добавление хотя бы одного URL фото
-                .tags(new ArrayList<>(Collections.singletonList(new Tag(1, "tagName"))))  // Добавление хотя бы одного тега
+                .tags(new ArrayList<>(List.of(new Tag1(1, "tagName"))))  // Добавление хотя бы одного тега
                 .build();
 
         Pet createPet = (Pet) given().
@@ -52,6 +54,7 @@ public class PetTests {
     }
 
     @Test
+    @Order(2)
     @DisplayName("Read pet")
     public void petReadTest() {
         Specification.installSpecification(Specification.requestSpec);
@@ -71,6 +74,7 @@ public class PetTests {
     }
 
     @Test
+    @Order(3)
     @DisplayName("Update pet")
     public void petUpdatedTest() {
         Specification.installSpecification(Specification.requestSpec);
@@ -82,7 +86,7 @@ public class PetTests {
                 .status("available")
                 .category(category)
                 .photoUrls(new ArrayList<>(Collections.singletonList("String")))  // Добавление хотя бы одного URL фото
-                .tags(new ArrayList<>(Collections.singletonList(new Tag(2, "Name"))))  // Добавление хотя бы одного тега
+                .tags(new ArrayList<>(Collections.singletonList(new Tag1(2, "Name"))))  // Добавление хотя бы одного тега
                 .build();
 
         Pet updatePet = (Pet) given().
@@ -100,6 +104,7 @@ public class PetTests {
     }
 
     @Test
+    @Order(4)
     @DisplayName("Delete pet")
     public void deletePetTest() {
         Specification.installSpecification(Specification.requestSpec);

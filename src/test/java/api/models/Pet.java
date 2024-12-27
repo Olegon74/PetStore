@@ -16,6 +16,6 @@ public class Pet {
     public Category category;
     public String name;
     public ArrayList<String> photoUrls;
-    public ArrayList<Tag> tags;
+    public ArrayList<Tag1> tags;
     public String status;
 }

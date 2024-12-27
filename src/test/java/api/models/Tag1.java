@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Tag {
+public class Tag1 {
     public int id;
     public String name;
 }

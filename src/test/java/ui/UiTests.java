@@ -6,6 +6,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -14,6 +15,7 @@ import java.util.Map;
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.open;
 
+@Tag("UI")
 public class UiTests extends LoginPage {
     private final String USERNAME = "standard_user";
     private final String PASSWORD = "secret_sauce";

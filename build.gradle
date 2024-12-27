@@ -40,6 +40,7 @@ dependencies {
 
             'com.codeborne:selenide:7.0.4',
             'org.junit.jupiter:junit-jupiter:5.10.2',
+            'org.junit.jupiter:junit-jupiter-api:5.10.2',
             'org.junit.jupiter:junit-jupiter-engine:5.10.2',
             'io.qameta.allure:allure-junit5:2.23.0',
             'io.qameta.allure:allure-selenide:2.20.1',
