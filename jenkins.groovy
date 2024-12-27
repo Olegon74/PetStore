@@ -7,7 +7,7 @@ base_git_url = "https://github.com/Olegon74/PetStore.git"
 node {
     withEnv(["branch=${branch_cutted}", "base_url=${base_git_url}"]) {
         stage("Checkout Branch") {
-            if (!"$branch_cutted".contains("master")) {
+            if (!"$branch_cutted".contains("main")) {
                 try {
                     getProject("$base_git_url", "$branch_cutted")
                 } catch (err) {
@@ -15,7 +15,7 @@ node {
                     throw ("${err}")
                 }
             } else {
-                echo "Current branch is master"
+                echo "Current branch is main"
             }
         }
 
