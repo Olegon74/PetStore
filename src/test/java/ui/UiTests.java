@@ -29,7 +29,6 @@ public class UiTests extends LoginPage {
         //WebDriverManager.chromedriver().setup();
 
     }*/
-
     @BeforeEach
     void setUp() {
         Configuration.browser = "chrome";
