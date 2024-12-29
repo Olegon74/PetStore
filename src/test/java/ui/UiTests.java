@@ -25,7 +25,7 @@ public class UiTests extends LoginPage {
         Configuration.browser = "chrome";
         Configuration.browserVersion = "126";
         Configuration.timeout = 8000; // Увеличение таймаута
-        Configuration.browserSize = "1920x1080";
+
         //WebDriverManager.chromedriver().setup();
 
     }*/
@@ -48,7 +48,6 @@ public class UiTests extends LoginPage {
         Configuration.browserCapabilities = capabilities;
         open(baseUrl);
     }
-
 
     @Test
     public void TheUserCanAddAnItemToTheCartTest() {
