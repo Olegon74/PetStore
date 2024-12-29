@@ -57,13 +57,6 @@ def getTestStages(testTags) {
     return stages
 }
 
-//def runTestWithTag(String tag) {
-//    try {
-//sh(label: "Run ${tag}", script: "chmod +x gradlew && ./gradlew -x test ${tag}")
-//   } finally {
-//        echo "some failed tests"
-//    }
-//}
 
 def runTestWithTag(String tag) {
     try {

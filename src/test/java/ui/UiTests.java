@@ -20,20 +20,24 @@ public class UiTests extends LoginPage {
     private final String USERNAME = "standard_user";
     private final String PASSWORD = "secret_sauce";
 
-    @BeforeAll
+    /*@BeforeAll
     static void beforeAll() {
         Configuration.browser = "chrome";
         Configuration.browserVersion = "126";
         Configuration.timeout = 8000; // Увеличение таймаута
         Configuration.browserSize = "1920x1080";
         //WebDriverManager.chromedriver().setup();
-    }
+
+    }*/
 
     @BeforeEach
     void setUp() {
+        Configuration.browser = "chrome";
+        Configuration.browserVersion = "126";
+        Configuration.timeout = 8000; // Увеличение таймаута
+        Configuration.browserSize = "1920x1080";
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
         SelenideLogger.addListener("allure", new AllureSelenide());
-        //WebDriverManager.chromedriver().setup();
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
